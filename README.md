@@ -1,3 +1,5 @@
+![Repo-size](https://img.shields.io/github/repo-size/spcktr/Linux-Update-Notifier?style=for-the-badge)
+
 # Linux-Update-Notifier
 
 
