@@ -17,7 +17,7 @@ sudo mkdir /opt/notifier
 echo 'Making folder /opt/notifier/ and moving the script into there'
 mv script.sh /opt/notifier
 chmod +x /opt/notifier/script.sh
-echo 'Ccript moved'
+echo 'Script moved'
 
 # ask user for notification address
 read -p "What is the notification email address?: " email_address
