@@ -2,11 +2,22 @@
 
 # install script for notifier
 
+#checking if mailutils is installed to send mail
+REQUIRED_PKG = "mailutils"
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
+echo "Checking for required dep:\n $REQUIRED_PKG: $PKG_OK"
+if [ "" = "$PKG_OK"]; then
+	echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
+	sudo apt install -y $REUQIRED_PKG
+fi
+
+#setting up folder structure
+
 sudo mkdir /opt/notifier
 echo 'Making folder /opt/notifier/ and moving the script into there'
 mv script.sh /opt/notifier
 chmod +x /opt/notifier/script.sh
-echo 'script moved'
+echo 'Ccript moved'
 
 # ask user for notification address
 read -p "What is the notification email address?: " email_address
