@@ -11,11 +11,13 @@ if [ "" = "$PKG_OK"]; then
 	sudo apt install -y $REUQIRED_PKG
 fi
 
+echo 'required deps installed'
+
 #setting up folder structure
 
 sudo mkdir /opt/notifier
 echo 'Making folder /opt/notifier/ and moving the script into there'
-mv script.sh /opt/notifier
+sudo mv script.sh /opt/notifier
 chmod +x /opt/notifier/script.sh
 echo 'Script moved'
 
@@ -36,6 +38,7 @@ do
 			echo "setting up crontab now..."
 			(crontab -l 2>/dev/null; echo "0 23 * * * /opt/notifier/script.sh") | crontab -
 			echo "cronjob installed to runn every day at 11pm, feel free to change"
+			break
 			;;
 		"No")
 			echo "Exiting Setup... Goodbye."
