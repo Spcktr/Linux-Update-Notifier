@@ -18,4 +18,4 @@ chmod +x install.sh
 ```
 
 #### Todo
-[ ] Option to update and notify of the applied updates
+- [ ] Option to update and notify of the applied updates
