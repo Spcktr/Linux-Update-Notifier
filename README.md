@@ -16,3 +16,6 @@ cd Linux-Update-Notifier
 chmod +x install.sh
  ./install.sh
 ```
+
+#### Todo
+[ ] Option to update and notify of the applied updates
