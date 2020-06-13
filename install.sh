@@ -34,7 +34,7 @@ do
 	case $opt in
 		"Yes")
 			echo "setting up crontab now..."
-			(crontab -l %% echo "0 23 * * * /opt/notifier/script.sh") | crontab -
+			(crontab -l 2>/dev/null; echo "0 23 * * * /opt/notifier/script.sh") | crontab -
 			echo "cronjob installed to runn every day at 11pm, feel free to change"
 			;;
 		"No")
