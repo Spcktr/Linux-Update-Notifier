@@ -23,7 +23,7 @@ echo 'Script moved'
 
 # ask user for notification address
 read -p "What is the notification email address?: " email_address
-sed -i "s/notify_email/$email_address/" /opt/notifier/script.sh
+sudo sed -i "s/notify_email/$email_address/" /opt/notifier/script.sh
 
 echo 'email address changed.'
 
@@ -36,8 +36,8 @@ do
 	case $opt in
 		"Yes")
 			echo "setting up crontab now..."
-			(crontab -l 2>/dev/null; echo "0 23 * * * /opt/notifier/script.sh") | crontab -
-			echo "cronjob installed to runn every day at 11pm, feel free to change"
+			(sudo crontab -l 2>/dev/null; echo "0 23 * * * /opt/notifier/script.sh") | crontab -
+			echo "cronjob installed to run every day at 11pm, feel free to change"
 			break
 			;;
 		"No")
